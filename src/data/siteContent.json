@@ -2,7 +2,15 @@
   "global": {
     "companyName": "Rockmix Infra",
     "logo": "/LOGO.webp",
-    "footerText": "Manufacturer and Exporter of Construction Equipment including various types of Concrete Batching Plant with options of Pan Twin Shaft & Planetary PAN Mixer, Wet Mix Macadam Plant, Precast Moulds, Cement / Storage Silos and Concrete Stationary Concrete Pump."
+    "footerText": "Manufacturer and Exporter of Construction Equipment including various types of Concrete Batching Plant with options of Pan Twin Shaft & Planetary PAN Mixer, Wet Mix Macadam Plant, Precast Moulds, Cement / Storage Silos and Concrete Stationary Concrete Pump.",
+    "menuItems": [
+      { "id": "home", "label": "Home", "visible": true },
+      { "id": "about", "label": "About Us", "visible": true },
+      { "id": "products", "label": "Products", "visible": true },
+      { "id": "dealership", "label": "Dealership", "visible": true },
+      { "id": "support", "label": "Support", "visible": true },
+      { "id": "contact", "label": "Contact Us", "visible": true }
+    ]
   },
   "home": {
     "heroTitle": "HEAVY ENGINEERING",
@@ -24,7 +32,47 @@
   "support": {
     "title": "Technical Support & Service Desk",
     "description": "We stand by our construction equipment with real-time technical guidance, on-site commissioning, electrical layouts, and parts support.",
-    "showSection": true
+    "showSection": true,
+    "pillars": [
+      {
+        "title": "Technical Assistance",
+        "desc": "Our engineering experts provide detailed consults to analyze aggregate specifications, output demands, and site parameters, ensuring you acquire the precise machinery configurations.",
+        "icon": "Headphones",
+        "color": "indigo"
+      },
+      {
+        "title": "On-Site Support",
+        "desc": "We stand beside you with experienced engineers. From complete concrete foundation blueprints, electrical line diagrams, mechanical erection, wet-mix calibration, and operator training.",
+        "icon": "Shield",
+        "color": "emerald"
+      },
+      {
+        "title": "Financial Flexibility",
+        "desc": "We recognize project cash-flow cycles. Our pricing is highly competitive, and we offer modular scaling choices where auxiliary feeders or silos can be added later as project scope climbs.",
+        "icon": "PiggyBank",
+        "color": "amber"
+      },
+      {
+        "title": "Long-Term Partnership",
+        "desc": "Commitment that goes miles beyond delivery. We guarantee immediate dispatch of critical wearing spares (anti-wear liners, mixing paddles, valves) and lifetime access to software updates for PLC panels.",
+        "icon": "Handshake",
+        "color": "blue"
+      }
+    ],
+    "helplines": [
+      {
+        "title": "Service Support",
+        "phone": "+91 99798 57329",
+        "email": "service@rockmixgroup.com",
+        "type": "service"
+      },
+      {
+        "title": "Spare Parts Support",
+        "phone": "+91 99798 57329",
+        "email": "spares@rockmixgroup.com",
+        "type": "spares"
+      }
+    ]
   },
   "dealership": {
     "title": "Dealership & Franchise Opportunities",
@@ -35,7 +83,16 @@
   "contact": {
     "title": "Contact Our Corporate Office",
     "description": "Reach out directly for customized plant requirements, commercial proposals, and wear-parts schedules.",
-    "showSection": true
+    "showSection": true,
+    "cards": [
+      {
+        "title": "Corporate HQ & Manufacturing Works",
+        "address": "Plot No - 38, Nandanvan Industrial Park - 2,\nBakrol To Dhamatvan Road, Bakrol Bujrang,\nAhmedabad - 382430, Gujarat, India",
+        "phones": "+91 90335 23175, +91 90335 23176",
+        "email": "sales@rockmixinfra.com",
+        "contactPerson": "Corporate Desk"
+      }
+    ]
   },
   "buttons": {
     "quoteBtnText": "Get Custom Quote",
@@ -58,6 +115,12 @@
     "primaryColor": "indigo",
     "accentColor": "emerald",
     "borderRadius": "rounded-xl"
+  },
+  "footer": {
+    "quickLinksHeader": "Quick Links",
+    "productsHeader": "Our Products",
+    "contactHeader": "Corporate HQ",
+    "copyright": "© 2026 Rockmix Infra Equipments Pvt. Ltd. All rights reserved."
   },
   "products": [
     {

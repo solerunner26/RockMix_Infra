@@ -6,6 +6,7 @@ export interface SiteContent {
     companyName: string;
     logo: string;
     footerText: string;
+    menuItems: { id: string; label: string; visible: boolean }[];
   };
   home: {
     heroTitle: string;
@@ -28,6 +29,8 @@ export interface SiteContent {
     title: string;
     description: string;
     showSection: boolean;
+    pillars: { title: string; desc: string; icon: string; color: string }[];
+    helplines: { title: string; phone: string; email: string; type: string }[];
   };
   dealership: {
     title: string;
@@ -39,6 +42,7 @@ export interface SiteContent {
     title: string;
     description: string;
     showSection: boolean;
+    cards: { title: string; address: string; phones: string; email: string; contactPerson: string }[];
   };
   products: Product[];
   buttons: {
@@ -63,7 +67,12 @@ export interface SiteContent {
     accentColor: string;
     borderRadius: string;
   };
+  footer: {
+    quickLinksHeader: string;
+    productsHeader: string;
+    contactHeader: string;
+    copyright: string;
+  };
 }
 
 export const DEFAULT_CONTENT = siteContentJson as SiteContent;
-

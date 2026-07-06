@@ -5,6 +5,7 @@ import {
   Headphones, SendHorizontal, Mail, Award, Settings, MessageSquare 
 } from 'lucide-react';
 import { PRODUCTS } from '../data';
+import { useSiteContent } from '../context/SiteContentContext';
 import {
   ConcreteBatchingPlantIcon,
   WetMixMacadamPlantIcon,
@@ -58,14 +59,34 @@ export default function Navbar({ activeTab, setActiveTab, onProductSelect }: Nav
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { id: 'home', label: 'Home', icon: Cpu },
-    { id: 'about', label: 'About Us', icon: ShieldCheck },
-    { id: 'products', label: 'Products', icon: Hammer, hasSubmenu: true },
-    { id: 'dealership', label: 'Dealership', icon: Award },
-    { id: 'support', label: 'Support', icon: Headphones },
-    { id: 'contact', label: 'Contact Us', icon: Mail },
+  const { content } = useSiteContent();
+
+  const ICON_MAP: Record<string, React.ComponentType<any>> = {
+    home: Cpu,
+    about: ShieldCheck,
+    products: Hammer,
+    dealership: Award,
+    support: Headphones,
+    contact: Mail,
+  };
+
+  const menuItems = content.global.menuItems || [
+    { id: 'home', label: 'Home', visible: true },
+    { id: 'about', label: 'About Us', visible: true },
+    { id: 'products', label: 'Products', visible: true },
+    { id: 'dealership', label: 'Dealership', visible: true },
+    { id: 'support', label: 'Support', visible: true },
+    { id: 'contact', label: 'Contact Us', visible: true }
   ];
+
+  const navItems = menuItems
+    .filter(item => item.visible)
+    .map(item => ({
+      id: item.id,
+      label: item.label,
+      icon: ICON_MAP[item.id] || Cpu,
+      hasSubmenu: item.id === 'products'
+    }));
 
   const handleNavItemClick = (itemId: string) => {
     if (itemId === 'products') {

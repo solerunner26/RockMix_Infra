@@ -85,22 +85,23 @@ export default function ContactSection({ onNavigate }: ContactSectionProps) {
     }
   };
 
-  const contactCards = [
+  const contactCardsList = content.contact.cards || [
     {
       title: 'Corporate HQ & Manufacturing Works',
-      addressLines: [
-        'Plot No - 38, Nandanvan Industrial Park - 2,',
-        'Bakrol To Dhamatvan Road, Bakrol Bujrang,',
-        'Ahmedabad - 382430, Gujarat, India'
-      ],
-      phones: [
-        '+91 90335 23175',
-        '+91 90335 23176'
-      ],
+      address: 'Plot No - 38, Nandanvan Industrial Park - 2,\nBakrol To Dhamatvan Road, Bakrol Bujrang,\nAhmedabad - 382430, Gujarat, India',
+      phones: '+91 90335 23175, +91 90335 23176',
       email: 'sales@rockmixinfra.com',
       contactPerson: 'Corporate Desk'
     }
   ];
+
+  const contactCards = contactCardsList.map(card => ({
+    title: card.title,
+    addressLines: card.address.split('\n'),
+    phones: card.phones.split(',').map((p: string) => p.trim()),
+    email: card.email,
+    contactPerson: card.contactPerson
+  }));
 
   return (
     <section id="contact-section" className="pt-[140px] md:pt-[160px] pb-24 px-4 max-w-7xl mx-auto space-y-16 relative">

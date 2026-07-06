@@ -297,6 +297,17 @@ export default function ProductsSection({
         // Safe logging
       }
 
+      // Post to backend API
+      try {
+        await fetch('/api/brochure/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadData)
+        });
+      } catch (backendErr) {
+        console.warn('Failed to send brochure download lead to backend:', backendErr);
+      }
+
       // Trigger actual download of brochure with a human-readable clean name
       const fileName = selectedBrochureProduct.name
         .toLowerCase()

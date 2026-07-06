@@ -146,14 +146,14 @@ export default function App() {
                 {content.global.footerText}
               </p>
               <div className="text-[10px] text-slate-500 font-mono text-center sm:text-left">
-                © {new Date().getFullYear()} {content.global.companyName}. All rights reserved.
+                {content.footer?.copyright || `© ${new Date().getFullYear()} ${content.global.companyName}. All rights reserved.`}
               </div>
             </div>
           </div>
 
           <div className="md:col-span-5 space-y-3">
             <h4 className="text-white text-xs font-bold uppercase tracking-widest font-mono">
-              Quick Navigation
+              {content.footer?.quickLinksHeader || "Quick Navigation"}
             </h4>
             <div className="grid grid-cols-2 gap-2 text-xs">
               <button onClick={() => handleNavigate('home')} className="text-left hover:text-white transition-colors">Home</button>
