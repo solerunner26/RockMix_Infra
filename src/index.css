@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", var(--font-sans);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-tagline: "Outfit", sans-serif;
+}
+
+@layer utilities {
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+      0 4px 30px rgba(0, 0, 0, 0.03),
+      inset 0 1px 1px rgba(255, 255, 255, 0.6),
+      inset 0 -1px 1px rgba(0, 0, 0, 0.02);
+  }
+
+  .liquid-glass-dark {
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 4px 30px rgba(0, 0, 0, 0.2),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+
+  .liquid-glass-card {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+      0 10px 40px -10px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .liquid-glass-input {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .liquid-glass-input:focus {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 
+      0 0 0 4px rgba(99, 102, 241, 0.1),
+      inset 0 1px 2px rgba(0, 0, 0, 0.02);
+    outline: none;
+  }
+}
+
+/* Animations for subtle background liquid morphing orbs */
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 30% / 50% 60% 30% 70%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.liquid-orb-1 {
+  animation: morph 20s ease-in-out infinite alternate;
+}
+
+.liquid-orb-2 {
+  animation: morph 25s ease-in-out infinite alternate-reverse;
+}
+
+.liquid-orb-3 {
+  animation: morph 15s ease-in-out infinite alternate;
+}
+
+/* Custom scrollbar to keep it sleek and minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.16);
+}

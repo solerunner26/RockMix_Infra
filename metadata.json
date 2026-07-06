@@ -1,0 +1,6 @@
+{
+  "name": "Rockmix Infra",
+  "description": "Showcase of high-performance construction machinery including Concrete Batching Plants, Wet Mix Macadam Plants, Precast Moulds, and Storage Silos with AI-powered technical assistance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
