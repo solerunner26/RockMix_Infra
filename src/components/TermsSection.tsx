@@ -2,7 +2,12 @@ import React from 'react';
 import { ShieldCheck, FileText, Building2, Scale, Lock, RefreshCw, AlertCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import { useSiteContent } from '../context/SiteContentContext';
+
 export default function TermsSection() {
+  const { content } = useSiteContent();
+  const primaryAddress = content.contact.cards?.[0]?.address?.replace(/\n/g, ', ') || 
+    "Plot No - 38, Nandanvan Industrial Park - 2, Bakrol To Dhamatvan Road, Bakrol Bujrang, Ahmedabad - 382430, Gujarat, India";
   return (
     <section id="terms-section" className="pt-[140px] md:pt-[160px] pb-24 px-4 max-w-4xl mx-auto space-y-12 relative">
       {/* Background ambient light blob */}
@@ -41,7 +46,7 @@ export default function TermsSection() {
               The term <strong className="text-slate-900 dark:text-white">"ROCKMIX"</strong> or <strong className="text-slate-900 dark:text-white">"us"</strong> or <strong className="text-slate-900 dark:text-white">"our"</strong> or <strong className="text-slate-900 dark:text-white">"we"</strong> refers to the owner of the website whose registered office is:
             </p>
             <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/50 dark:border-slate-800 text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-300 italic leading-relaxed">
-              "Plot No - 38, Nandanvan Industrial Park - 2, Bakrol To Dhamatvan Road, Bakrol Bujrang, Ahmedabad-382430, Gujarat, India"
+              "{primaryAddress}"
             </div>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
               The term <strong className="text-slate-900 dark:text-white">"you"</strong> refers to the user or viewer of our website. The use of this website is subject to the following terms of use:

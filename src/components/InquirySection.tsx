@@ -8,12 +8,17 @@ import {
   CheckSquare, Square
 } from 'lucide-react';
 
+import { useSiteContent } from '../context/SiteContentContext';
+
 interface InquirySectionProps {
   preselectedProduct: string | null;
   clearPreselectedProduct: () => void;
 }
 
 export default function InquirySection({ preselectedProduct, clearPreselectedProduct }: InquirySectionProps) {
+  const { content } = useSiteContent();
+  const primaryPhone = content.contact.cards?.[0]?.phones?.split(',')[0]?.trim() || '+91 90335 23175';
+  const primaryEmail = content.contact.cards?.[0]?.email || 'sales@rockmixinfra.com';
   const [formData, setFormData] = useState<InquiryFormData>({
     name: '',
     email: '',
@@ -526,11 +531,11 @@ export default function InquirySection({ preselectedProduct, clearPreselectedPro
                 <div className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
                   <p className="flex items-center gap-2.5">
                     <Phone className="h-4 w-4 text-indigo-600" />
-                    <span>+91 90335 23175</span>
+                    <span>{primaryPhone}</span>
                   </p>
                   <p className="flex items-center gap-2.5">
                     <Mail className="h-4 w-4 text-indigo-600" />
-                    <span>sales@rockmixinfra.com</span>
+                    <span>{primaryEmail}</span>
                   </p>
                 </div>
               </div>
