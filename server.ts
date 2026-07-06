@@ -126,7 +126,7 @@ async function startServer() {
 
   // Helper: Save Site Content to SQLite (Transactional)
   const saveSiteContent = db.transaction((content: any) => {
-    const keys = ["global", "home", "about", "support", "dealership", "contact", "buttons", "forms", "theme", "footer"];
+    const keys = ["global", "home", "about", "support", "dealership", "contact", "buttons", "forms", "theme", "footer", "productsPage", "inquiry", "terms"];
     keys.forEach(key => {
       if (content[key]) {
         db.prepare("INSERT OR REPLACE INTO site_settings (key, value) VALUES (?, ?)").run(

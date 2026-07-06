@@ -4,12 +4,36 @@
     "logo": "/LOGO.webp",
     "footerText": "Manufacturer and Exporter of Construction Equipment including various types of Concrete Batching Plant with options of Pan Twin Shaft & Planetary PAN Mixer, Wet Mix Macadam Plant, Precast Moulds, Cement / Storage Silos and Concrete Stationary Concrete Pump.",
     "menuItems": [
-      { "id": "home", "label": "Home", "visible": true },
-      { "id": "about", "label": "About Us", "visible": true },
-      { "id": "products", "label": "Products", "visible": true },
-      { "id": "dealership", "label": "Dealership", "visible": true },
-      { "id": "support", "label": "Support", "visible": true },
-      { "id": "contact", "label": "Contact Us", "visible": true }
+      {
+        "id": "home",
+        "label": "Home",
+        "visible": true
+      },
+      {
+        "id": "about",
+        "label": "About Us",
+        "visible": true
+      },
+      {
+        "id": "products",
+        "label": "Products",
+        "visible": true
+      },
+      {
+        "id": "dealership",
+        "label": "Dealership",
+        "visible": true
+      },
+      {
+        "id": "support",
+        "label": "Support",
+        "visible": true
+      },
+      {
+        "id": "contact",
+        "label": "Contact Us",
+        "visible": true
+      }
     ]
   },
   "home": {
@@ -146,12 +170,30 @@
         "Intuitive PLC control panel with SCADA interface and manual backup switches"
       ],
       "specifications": [
-        { "label": "Capacity Range", "value": "30 m³/hr to 60 m³/hr" },
-        { "label": "Mixer Type", "value": "High-Efficiency Twin Shaft or Planetary" },
-        { "label": "Aggregate Bins", "value": "2 to 4 compartments with adjustable gates" },
-        { "label": "Control System", "value": "PLC with multi-language HMI touchscreen" },
-        { "label": "Erection Time", "value": "Less than 24 hours under standard conditions" },
-        { "label": "Water Weighing", "value": "Precision load cells (± 1% accuracy)" }
+        {
+          "label": "Capacity Range",
+          "value": "30 m³/hr to 60 m³/hr"
+        },
+        {
+          "label": "Mixer Type",
+          "value": "High-Efficiency Twin Shaft or Planetary"
+        },
+        {
+          "label": "Aggregate Bins",
+          "value": "2 to 4 compartments with adjustable gates"
+        },
+        {
+          "label": "Control System",
+          "value": "PLC with multi-language HMI touchscreen"
+        },
+        {
+          "label": "Erection Time",
+          "value": "Less than 24 hours under standard conditions"
+        },
+        {
+          "label": "Water Weighing",
+          "value": "Precision load cells (± 1% accuracy)"
+        }
       ],
       "highlights": [
         "The ultimate mobile solution for linear road projects, canal systems, and short-term casting yards."
@@ -179,12 +221,30 @@
         "Extremely quick setup with zero civil foundation work required on site"
       ],
       "specifications": [
-        { "label": "Capacity Range", "value": "15 m³/hr to 25 m³/hr" },
-        { "label": "Mixer Capacity", "value": "0.5 m³ dry-fill volume per batch" },
-        { "label": "Aggregate Feed", "value": "Low-height batching hoppers" },
-        { "label": "Mobility", "value": "Heavy-duty dual axles with pneumatic tires" },
-        { "label": "Total Weight", "value": "Compact structure for easy local towing" },
-        { "label": "Power Options", "value": "Electric motor or optional onboard diesel generator" }
+        {
+          "label": "Capacity Range",
+          "value": "15 m³/hr to 25 m³/hr"
+        },
+        {
+          "label": "Mixer Capacity",
+          "value": "0.5 m³ dry-fill volume per batch"
+        },
+        {
+          "label": "Aggregate Feed",
+          "value": "Low-height batching hoppers"
+        },
+        {
+          "label": "Mobility",
+          "value": "Heavy-duty dual axles with pneumatic tires"
+        },
+        {
+          "label": "Total Weight",
+          "value": "Compact structure for easy local towing"
+        },
+        {
+          "label": "Power Options",
+          "value": "Electric motor or optional onboard diesel generator"
+        }
       ],
       "highlights": [
         "Perfect for urban trenching, pipeline laying, telecom tower bases, and rural pathways."
@@ -213,12 +273,30 @@
         "Anti-segregation discharge surge hopper with hydraulic slide gates for direct truck loading"
       ],
       "specifications": [
-        { "label": "Output Capacity", "value": "100 TPH to 250 TPH" },
-        { "label": "Pugmill Drive", "value": "Heavy-duty dual-motor synchronization" },
-        { "label": "Feeder Bins", "value": "4 bins with fine-adjustment aggregate discharge gates" },
-        { "label": "Water Tank", "value": "Integrated 4000L to 8000L capacity storage" },
-        { "label": "Discharge Conveyor", "value": "Deep-groove Chevron belt for high aggregate volume" },
-        { "label": "Screening Deck", "value": "Vibratory screen for rejecting oversized aggregates" }
+        {
+          "label": "Output Capacity",
+          "value": "100 TPH to 250 TPH"
+        },
+        {
+          "label": "Pugmill Drive",
+          "value": "Heavy-duty dual-motor synchronization"
+        },
+        {
+          "label": "Feeder Bins",
+          "value": "4 bins with fine-adjustment aggregate discharge gates"
+        },
+        {
+          "label": "Water Tank",
+          "value": "Integrated 4000L to 8000L capacity storage"
+        },
+        {
+          "label": "Discharge Conveyor",
+          "value": "Deep-groove Chevron belt for high aggregate volume"
+        },
+        {
+          "label": "Screening Deck",
+          "value": "Vibratory screen for rejecting oversized aggregates"
+        }
       ],
       "highlights": [
         "Constant-rate automatic water spraying system synchronizes perfectly with material mass-flow rates."
@@ -245,12 +323,30 @@
         "Modular pre-assembled sub-structures permit fast bolt-together site erection"
       ],
       "specifications": [
-        { "label": "Capacity Range", "value": "30 m³/hr to 60 m³/hr" },
-        { "label": "Mixer Volume", "value": "0.5 m³ to 1.0 m³ compacted output per batch" },
-        { "label": "Aggregate Bins", "value": "3 or 4 compartment inline structure" },
-        { "label": "Batch Cycle Time", "value": "45 to 60 seconds average" },
-        { "label": "Total Footprint", "value": "Extremely compact workspace requirement" },
-        { "label": "Maintenance Access", "value": "Galvanized walking platforms with complete safety railings" }
+        {
+          "label": "Capacity Range",
+          "value": "30 m³/hr to 60 m³/hr"
+        },
+        {
+          "label": "Mixer Volume",
+          "value": "0.5 m³ to 1.0 m³ compacted output per batch"
+        },
+        {
+          "label": "Aggregate Bins",
+          "value": "3 or 4 compartment inline structure"
+        },
+        {
+          "label": "Batch Cycle Time",
+          "value": "45 to 60 seconds average"
+        },
+        {
+          "label": "Total Footprint",
+          "value": "Extremely compact workspace requirement"
+        },
+        {
+          "label": "Maintenance Access",
+          "value": "Galvanized walking platforms with complete safety railings"
+        }
       ],
       "highlights": [
         "Maximizes real estate efficiency for precast block facilities and urban ready-mix hubs."
@@ -277,12 +373,30 @@
         "High-capacity dual-shaft mixer with automatic multi-nozzle high-pressure water washing"
       ],
       "specifications": [
-        { "label": "Capacity Range", "value": "60 m³/hr to 120 m³/hr" },
-        { "label": "Mixer Batch Output", "value": "1.5 m³ to 3.0 m³ compacted per cycle" },
-        { "label": "Inline Bins count", "value": "4 to 6 compartments" },
-        { "label": "Cement Weighing", "value": "Separate independent scale with pneumatic aeration" },
-        { "label": "SCADA Software", "value": "Real-time production metrics with cloud reporting" },
-        { "label": "Structural Steel", "value": "Hot-dip galvanized heavy-gauge framework" }
+        {
+          "label": "Capacity Range",
+          "value": "60 m³/hr to 120 m³/hr"
+        },
+        {
+          "label": "Mixer Batch Output",
+          "value": "1.5 m³ to 3.0 m³ compacted per cycle"
+        },
+        {
+          "label": "Inline Bins count",
+          "value": "4 to 6 compartments"
+        },
+        {
+          "label": "Cement Weighing",
+          "value": "Separate independent scale with pneumatic aeration"
+        },
+        {
+          "label": "SCADA Software",
+          "value": "Real-time production metrics with cloud reporting"
+        },
+        {
+          "label": "Structural Steel",
+          "value": "Hot-dip galvanized heavy-gauge framework"
+        }
       ],
       "highlights": [
         "Engineered to operate 24/7 under harsh conditions with zero aggregate bridging or cement hydration delays."
@@ -309,12 +423,30 @@
         "Structural layout supports direct ground installation with basic level-compacting pads"
       ],
       "specifications": [
-        { "label": "Capacity Range", "value": "45 m³/hr to 90 m³/hr" },
-        { "label": "Shipping Container", "value": "Fully fits inside 40ft High Cube containers" },
-        { "label": "Installation Type", "value": "Quick-erect fold-out legs with bolt-on structures" },
-        { "label": "Water Connection", "value": "Integrated pressurized pump block with digital flow meter" },
-        { "label": "Total Installed Power", "value": "75 kW to 110 kW average" },
-        { "label": "Weighing Sensors", "value": "Multi-directional tension load cells" }
+        {
+          "label": "Capacity Range",
+          "value": "45 m³/hr to 90 m³/hr"
+        },
+        {
+          "label": "Shipping Container",
+          "value": "Fully fits inside 40ft High Cube containers"
+        },
+        {
+          "label": "Installation Type",
+          "value": "Quick-erect fold-out legs with bolt-on structures"
+        },
+        {
+          "label": "Water Connection",
+          "value": "Integrated pressurized pump block with digital flow meter"
+        },
+        {
+          "label": "Total Installed Power",
+          "value": "75 kW to 110 kW average"
+        },
+        {
+          "label": "Weighing Sensors",
+          "value": "Multi-directional tension load cells"
+        }
       ],
       "highlights": [
         "Designed for international contractors looking to shift operations globally with minimal logistic delays."
@@ -336,16 +468,103 @@
         "Wireless remote control unit for flexible, secure operator positioning"
       ],
       "specifications": [
-        { "label": "Maximum Pressure", "value": "Max 120 Bar on concrete" },
-        { "label": "Max Delivery Range", "value": "Up to 350m vertical / 800m horizontal" },
-        { "label": "Cylinder Stroke", "value": "1400 mm to 2100 mm long-stroke design" },
-        { "label": "Maximum Aggregate", "value": "Handles aggregate sizes up to 40 mm" },
-        { "label": "Hopper Capacity", "value": "600 Liters with high-strength agitator" },
-        { "label": "Hydraulic Pumps", "value": "Rexroth variable displacement axial piston pumps" }
+        {
+          "label": "Maximum Pressure",
+          "value": "Max 120 Bar on concrete"
+        },
+        {
+          "label": "Max Delivery Range",
+          "value": "Up to 350m vertical / 800m horizontal"
+        },
+        {
+          "label": "Cylinder Stroke",
+          "value": "1400 mm to 2100 mm long-stroke design"
+        },
+        {
+          "label": "Maximum Aggregate",
+          "value": "Handles aggregate sizes up to 40 mm"
+        },
+        {
+          "label": "Hopper Capacity",
+          "value": "600 Liters with high-strength agitator"
+        },
+        {
+          "label": "Hydraulic Pumps",
+          "value": "Rexroth variable displacement axial piston pumps"
+        }
       ],
       "highlights": [
         "High-pressure dual-wall cylinders and heavy-duty wear rings guarantee maximum service life during demanding vertical concrete climbs."
       ]
     }
-  ]
+  ],
+  "productsPage": {
+    "title": "ROCKMIX Range of Products",
+    "watermarkText": "ROCKMIX Range of Products",
+    "carouselImages": [
+      "/wc1.webp",
+      "/wc2.webp",
+      "/wc3.webp",
+      "/wc4.webp",
+      "/wc5.webp",
+      "/wc6.webp",
+      "/wc7.webp",
+      "/wc8.webp"
+    ]
+  },
+  "inquiry": {
+    "sidebarTitle": "Why choose Rockmix Infra?",
+    "sidebarDescription": "We deliver heavy machinery solutions designed for rugged performance and maximum active lifecycle.",
+    "sidebarPoints": [
+      {
+        "title": "Reliable construction machinery",
+        "desc": "Built using structural high-tensile steel, high-wear chromium lining plates, and premium components."
+      },
+      {
+        "title": "Technical support",
+        "desc": "24/7 technical help desk coupled with on-site deployment assistance and operational calibration."
+      },
+      {
+        "title": "Custom project solutions",
+        "desc": "Tailored configurations spanning compact mobile, container modular, and continuous paving layouts."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "subtitle": "Last Updated: June 2026 • Rockmix Infra Equipments Pvt. Ltd.",
+    "welcomeText": "The term \"ROCKMIX\" or \"us\" or \"our\" or \"we\" refers to the owner of the website whose registered office is:",
+    "items": [
+      {
+        "title": "Acceptance of Terms",
+        "desc": "By accessing and using this website, you agree to comply with and be bound by these Terms & Conditions. If you do not agree, please discontinue use immediately."
+      },
+      {
+        "title": "Business Scope",
+        "desc": "This website provides information about construction equipment procurement, dealership services, and related business offerings. All transactions, quotations, and agreements are subject to separate written contracts between Rockmix Infra Equipments Pvt. Ltd. and the customer."
+      },
+      {
+        "title": "Use of Website",
+        "bullets": [
+          "You agree to use this website only for lawful purposes related to construction equipment inquiries and purchases.",
+          "Misuse of the website, including unauthorized access, data scraping, or fraudulent activity, is strictly prohibited."
+        ]
+      },
+      {
+        "title": "Product Information & Pricing",
+        "bullets": [
+          "While we strive to provide accurate product details, specifications, and pricing, errors may occur.",
+          "Prices and availability are subject to change without prior notice.",
+          "Final terms, including delivery schedules and payment conditions, will be confirmed in dealership agreements."
+        ]
+      },
+      {
+        "title": "Intellectual Property",
+        "bullets": [
+          "This website contains material which is owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.",
+          "All content, including product images, brochures, logos, and text, is the property of Rockmix."
+        ]
+      }
+    ]
+  }
 }

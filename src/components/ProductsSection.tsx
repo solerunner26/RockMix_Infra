@@ -177,6 +177,23 @@ export default function ProductsSection({
   const { content } = useSiteContent();
   const productsList = useMemo(() => content.products || PRODUCTS, [content.products]);
   
+  const carouselImages = content.productsPage?.carouselImages || [
+    "/wc1.webp",
+    "/wc2.webp",
+    "/wc3.webp",
+    "/wc4.webp",
+    "/wc5.webp",
+    "/wc6.webp",
+    "/wc7.webp",
+    "/wc8.webp"
+  ];
+  const carouselItems = useMemo(() => {
+    return carouselImages.map((img, idx) => ({
+      image: img,
+      title: `Product Image ${idx + 1}`
+    }));
+  }, [carouselImages]);
+
   const [activeIdx, setActiveIdx] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
@@ -359,17 +376,17 @@ export default function ProductsSection({
   useEffect(() => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % productCarouselItems.length);
+      setActiveIdx((prev) => (prev + 1) % carouselItems.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, carouselItems.length]);
 
   const handlePrev = () => {
-    setActiveIdx((prev) => (prev - 1 + productCarouselItems.length) % productCarouselItems.length);
+    setActiveIdx((prev) => (prev - 1 + carouselItems.length) % carouselItems.length);
   };
 
   const handleNext = () => {
-    setActiveIdx((prev) => (prev + 1) % productCarouselItems.length);
+    setActiveIdx((prev) => (prev + 1) % carouselItems.length);
   };
 
   // Sync selection from navigation and scroll to the selected product card
@@ -398,7 +415,7 @@ export default function ProductsSection({
       {/* Header section */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          ROCKMIX Range of Products
+          {content.productsPage?.title || "ROCKMIX Range of Products"}
         </h2>
 
         {/* Premium Animated 180-Degree Rotating Carousel */}
@@ -407,7 +424,7 @@ export default function ProductsSection({
           {/* Large semi-transparent background text */}
           <div className="absolute inset-0 flex items-center justify-center select-none overflow-hidden pointer-events-none -z-10">
             <span className="text-[7vw] md:text-[8vw] font-black tracking-widest text-slate-200/25 dark:text-slate-700/10 font-display uppercase whitespace-nowrap opacity-75">
-              ROCKMIX Range of Products
+              {content.productsPage?.watermarkText || "ROCKMIX Range of Products"}
             </span>
           </div>
 
@@ -419,8 +436,8 @@ export default function ProductsSection({
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
             {/* Items */}
-            {productCarouselItems.map((item, i) => {
-              const n = productCarouselItems.length;
+            {carouselItems.map((item, i) => {
+              const n = carouselItems.length;
               let offset = i - activeIdx;
               if (offset > n / 2) {
                 offset -= n;
@@ -533,7 +550,7 @@ export default function ProductsSection({
 
           {/* Indicator Dots */}
           <div className="flex items-center space-x-2 mt-6 z-40">
-            {productCarouselItems.map((_, i) => (
+            {carouselItems.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveIdx(i)}

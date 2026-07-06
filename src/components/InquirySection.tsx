@@ -487,14 +487,16 @@ export default function InquirySection({ preselectedProduct, clearPreselectedPro
             <div className="lg:col-span-4 space-y-6">
               <div className="rounded-3xl bg-white/75 dark:bg-slate-900/75 text-slate-800 dark:text-slate-200 p-6 shadow-xl space-y-6 border border-slate-200/50 dark:border-slate-800/80">
                 <div className="space-y-2">
-                  <h4 className="font-display text-lg font-bold text-slate-900 dark:text-white">Why choose Rockmix Infra?</h4>
+                  <h4 className="font-display text-lg font-bold text-slate-900 dark:text-white">
+                    {content.inquiry?.sidebarTitle || "Why choose Rockmix Infra?"}
+                  </h4>
                   <p className="text-slate-500 dark:text-slate-400 text-xs">
-                    We deliver heavy machinery solutions designed for rugged performance and maximum active lifecycle.
+                    {content.inquiry?.sidebarDescription || "We deliver heavy machinery solutions designed for rugged performance and maximum active lifecycle."}
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  {[
+                  {(content.inquiry?.sidebarPoints || [
                     {
                       title: 'Reliable construction machinery',
                       desc: 'Built using structural high-tensile steel, high-wear chromium lining plates, and premium components.'
@@ -506,12 +508,8 @@ export default function InquirySection({ preselectedProduct, clearPreselectedPro
                     {
                       title: 'Custom project solutions',
                       desc: 'Tailored configurations spanning compact mobile, container modular, and continuous paving layouts.'
-                    },
-                    {
-                      title: 'Dealer and customer support',
-                      desc: 'Nationwide distribution hub guaranteeing immediate dispatch of wear components and spare parts.'
                     }
-                  ].map((item, idx) => (
+                  ]).map((item, idx) => (
                     <div key={idx} className="flex gap-3.5 items-start">
                       <div className="mt-0.5 shrink-0 h-6 w-6 rounded-full bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xs border border-indigo-100 dark:border-indigo-900/50">
                         {idx + 1}

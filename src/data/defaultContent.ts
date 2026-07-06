@@ -73,6 +73,22 @@ export interface SiteContent {
     contactHeader: string;
     copyright: string;
   };
+  productsPage: {
+    title: string;
+    watermarkText: string;
+    carouselImages: string[];
+  };
+  inquiry: {
+    sidebarTitle: string;
+    sidebarDescription: string;
+    sidebarPoints: { title: string; desc: string }[];
+  };
+  terms: {
+    title: string;
+    subtitle: string;
+    welcomeText: string;
+    items: { title: string; desc?: string; bullets?: string[] }[];
+  };
 }
 
 export const DEFAULT_CONTENT = siteContentJson as SiteContent;

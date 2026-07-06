@@ -870,9 +870,12 @@ export default function AdminPanel() {
                 { id: 'global', label: 'Navigation & Global' },
                 { id: 'home', label: 'Homepage' },
                 { id: 'about', label: 'About Us' },
+                { id: 'productsPage', label: 'Products Page' },
                 { id: 'support', label: 'Support Desk' },
                 { id: 'dealership', label: 'Partnership Page' },
-                { id: 'contact', label: 'Contact details' },
+                { id: 'inquiry', label: 'Request Quote' },
+                { id: 'contact', label: 'Contact Details' },
+                { id: 'terms', label: 'Terms & Conditions' },
                 { id: 'forms', label: 'Forms & Messages' },
                 { id: 'buttons', label: 'Buttons & Controls' },
                 { id: 'footer', label: 'Footer Settings' }
@@ -1631,7 +1634,7 @@ export default function AdminPanel() {
               </div>
             )}
 
-            {/* Sub-Tab Panel: Footer Settings */}
+             {/* Sub-Tab Panel: Footer Settings */}
             {contentSubTab === 'footer' && (
               <div className="space-y-6 bg-slate-900/40 border border-slate-900 p-6 rounded-2xl">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Footer Column Headers & Copyright Text</h4>
@@ -1663,6 +1666,244 @@ export default function AdminPanel() {
                     onBlur={(e) => handleSaveContent('footer', { ...content.footer, copyright: e.target.value })}
                     className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-800 bg-slate-950 text-white focus:outline-none"
                   />
+                </div>
+              </div>
+            )}
+
+            {/* Sub-Tab Panel: Products Page */}
+            {contentSubTab === 'productsPage' && (
+              <div className="space-y-6 bg-slate-900/40 border border-slate-900 p-6 rounded-2xl">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Products Page Header Settings</h4>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <label className="text-[10px] text-slate-400 font-extrabold uppercase block">Products Section Title</label>
+                    <input 
+                      type="text" 
+                      defaultValue={content.productsPage?.title || 'ROCKMIX Range of Products'}
+                      onBlur={(e) => handleSaveContent('productsPage', { ...content.productsPage, title: e.target.value })}
+                      className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-800 bg-slate-950 text-white focus:outline-none"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] text-slate-400 font-extrabold uppercase block">Background Watermark text</label>
+                    <input 
+                      type="text" 
+                      defaultValue={content.productsPage?.watermarkText || 'ROCKMIX Range of Products'}
+                      onBlur={(e) => handleSaveContent('productsPage', { ...content.productsPage, watermarkText: e.target.value })}
+                      className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-800 bg-slate-950 text-white focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-3 pt-2">
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Slideshow / Carousel Images (8 images)</h4>
+                  <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    {(content.productsPage?.carouselImages || [
+                      "/wc1.webp",
+                      "/wc2.webp",
+                      "/wc3.webp",
+                      "/wc4.webp",
+                      "/wc5.webp",
+                      "/wc6.webp",
+                      "/wc7.webp",
+                      "/wc8.webp"
+                    ]).map((img, idx) => (
+                      <div key={idx} className="bg-slate-950/60 p-3 rounded-xl border border-slate-850 space-y-2">
+                        <div className="flex justify-between items-center text-[9px] text-indigo-400 font-bold uppercase">
+                          <span>Slide #{idx + 1}</span>
+                        </div>
+                        <img 
+                          src={img} 
+                          alt={`Slide ${idx + 1}`} 
+                          className="h-16 w-full object-cover rounded-lg border border-slate-800 bg-slate-900"
+                        />
+                        <div className="flex gap-1.5">
+                          <input 
+                            type="text" 
+                            value={img}
+                            readOnly
+                            className="flex-grow text-[9px] py-1 px-1.5 rounded bg-slate-900 border border-slate-800 text-slate-400 min-w-0"
+                          />
+                          <label className="shrink-0 bg-slate-800 hover:bg-slate-750 text-white p-1 rounded text-[9px] font-bold cursor-pointer flex items-center justify-center">
+                            <Upload className="h-3 w-3" />
+                            <input 
+                              type="file" 
+                              accept="image/*"
+                              className="hidden" 
+                              onChange={(e) => handleFileUpload(e, 'image', (url) => {
+                                const copy = [...(content.productsPage?.carouselImages || [])];
+                                copy[idx] = url;
+                                handleSaveContent('productsPage', { ...content.productsPage, carouselImages: copy });
+                              })}
+                            />
+                          </label>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Sub-Tab Panel: Request Quote */}
+            {contentSubTab === 'inquiry' && (
+              <div className="space-y-6 bg-slate-900/40 border border-slate-900 p-6 rounded-2xl">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Request Quote Sidebar Copy</h4>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <label className="text-[10px] text-slate-400 font-extrabold uppercase block">Sidebar Heading Title</label>
+                    <input 
+                      type="text" 
+                      defaultValue={content.inquiry?.sidebarTitle || 'Why choose Rockmix Infra?'}
+                      onBlur={(e) => handleSaveContent('inquiry', { ...content.inquiry, sidebarTitle: e.target.value })}
+                      className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-800 bg-slate-950 text-white focus:outline-none"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] text-slate-400 font-extrabold uppercase block">Sidebar Description copy</label>
+                    <textarea 
+                      rows={2}
+                      defaultValue={content.inquiry?.sidebarDescription || 'We deliver heavy machinery solutions designed for rugged performance and maximum active lifecycle.'}
+                      onBlur={(e) => handleSaveContent('inquiry', { ...content.inquiry, sidebarDescription: e.target.value })}
+                      className="w-full text-xs py-2 px-3 rounded-xl border border-slate-800 bg-slate-950 text-white focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Sidebar Points */}
+                <div className="space-y-4 pt-2 border-t border-slate-850">
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Sidebar Key Points (3 Points)</h4>
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    {(content.inquiry?.sidebarPoints || [
+                      { title: "Reliable construction machinery", desc: "Built using structural high-tensile steel, high-wear chromium lining plates, and premium components." },
+                      { title: "Technical support", desc: "24/7 technical help desk coupled with on-site deployment assistance and operational calibration." },
+                      { title: "Custom project solutions", desc: "Tailored configurations spanning compact mobile, container modular, and continuous paving layouts." }
+                    ]).map((pt, idx) => (
+                      <div key={idx} className="bg-slate-950/60 p-4 rounded-xl border border-slate-850 space-y-2">
+                        <span className="text-[9px] text-indigo-400 font-bold uppercase block">Point #{idx + 1}</span>
+                        <div className="space-y-1">
+                          <label className="text-[8px] text-slate-500 font-bold block">Point Title</label>
+                          <input 
+                            type="text"
+                            defaultValue={pt.title}
+                            onBlur={(e) => {
+                              const copy = [...(content.inquiry?.sidebarPoints || [])];
+                              copy[idx].title = e.target.value;
+                              handleSaveContent('inquiry', { ...content.inquiry, sidebarPoints: copy });
+                            }}
+                            className="w-full bg-slate-950 border border-slate-800 px-2 py-1 rounded text-xs text-white focus:outline-none"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <label className="text-[8px] text-slate-500 font-bold block">Point Description</label>
+                          <textarea 
+                            rows={3}
+                            defaultValue={pt.desc}
+                            onBlur={(e) => {
+                              const copy = [...(content.inquiry?.sidebarPoints || [])];
+                              copy[idx].desc = e.target.value;
+                              handleSaveContent('inquiry', { ...content.inquiry, sidebarPoints: copy });
+                            }}
+                            className="w-full bg-slate-950 border border-slate-800 px-2 py-1 rounded text-xs text-white focus:outline-none"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Sub-Tab Panel: Terms & Conditions */}
+            {contentSubTab === 'terms' && (
+              <div className="space-y-6 bg-slate-900/40 border border-slate-900 p-6 rounded-2xl">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Terms & Conditions Page Content</h4>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <label className="text-[10px] text-slate-400 font-extrabold uppercase block">Page Main Title</label>
+                    <input 
+                      type="text" 
+                      defaultValue={content.terms?.title || 'Terms & Conditions'}
+                      onBlur={(e) => handleSaveContent('terms', { ...content.terms, title: e.target.value })}
+                      className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-800 bg-slate-950 text-white focus:outline-none"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] text-slate-400 font-extrabold uppercase block">Last Updated Subtext</label>
+                    <input 
+                      type="text" 
+                      defaultValue={content.terms?.subtitle || 'Last Updated: June 2026 • Rockmix Infra Equipments Pvt. Ltd.'}
+                      onBlur={(e) => handleSaveContent('terms', { ...content.terms, subtitle: e.target.value })}
+                      className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-800 bg-slate-950 text-white focus:outline-none"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] text-slate-400 font-extrabold uppercase block">Welcome Introduction Paragraph</label>
+                  <textarea 
+                    rows={2}
+                    defaultValue={content.terms?.welcomeText || 'The term "ROCKMIX" or "us" or "our" or "we" refers to the owner of the website whose registered office is:'}
+                    onBlur={(e) => handleSaveContent('terms', { ...content.terms, welcomeText: e.target.value })}
+                    className="w-full text-xs py-2 px-3 rounded-xl border border-slate-800 bg-slate-950 text-white focus:outline-none"
+                  />
+                </div>
+
+                {/* Terms Clauses List */}
+                <div className="space-y-4 pt-2 border-t border-slate-850">
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Terms Clauses Bento Cards (8 items)</h4>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {(content.terms?.items || [
+                      { title: "Acceptance of Terms", desc: "By accessing and using this website, you agree to comply with and be bound by these Terms & Conditions." },
+                      { title: "Business Scope", desc: "This website provides information about construction equipment procurement, dealership services, and related business offerings." }
+                    ]).map((clause, idx) => (
+                      <div key={idx} className="bg-slate-950/60 p-4 rounded-xl border border-slate-850 space-y-3">
+                        <span className="text-[9px] text-indigo-400 font-bold uppercase block">Clause #{idx + 1}</span>
+                        <div className="space-y-1">
+                          <label className="text-[8px] text-slate-500 font-bold block">Clause Title</label>
+                          <input 
+                            type="text"
+                            defaultValue={clause.title}
+                            onBlur={(e) => {
+                              const copy = [...(content.terms?.items || [])];
+                              copy[idx].title = e.target.value;
+                              handleSaveContent('terms', { ...content.terms, items: copy });
+                            }}
+                            className="w-full bg-slate-950 border border-slate-800 px-2 py-1 rounded text-xs text-white focus:outline-none"
+                          />
+                        </div>
+                        {clause.desc !== undefined && (
+                          <div className="space-y-1">
+                            <label className="text-[8px] text-slate-500 font-bold block">Clause Description</label>
+                            <textarea 
+                              rows={3}
+                              defaultValue={clause.desc}
+                              onBlur={(e) => {
+                                const copy = [...(content.terms?.items || [])];
+                                copy[idx].desc = e.target.value;
+                                handleSaveContent('terms', { ...content.terms, items: copy });
+                              }}
+                              className="w-full bg-slate-950 border border-slate-800 px-2 py-1 rounded text-xs text-white focus:outline-none"
+                            />
+                          </div>
+                        )}
+                        {clause.bullets !== undefined && (
+                          <div className="space-y-1">
+                            <label className="text-[8px] text-slate-500 font-bold block">Bullet Points (one per line)</label>
+                            <textarea 
+                              rows={4}
+                              defaultValue={clause.bullets.join('\n')}
+                              onBlur={(e) => {
+                                const copy = [...(content.terms?.items || [])];
+                                copy[idx].bullets = e.target.value.split('\n').filter(line => line.trim() !== '');
+                                handleSaveContent('terms', { ...content.terms, items: copy });
+                              }}
+                              className="w-full bg-slate-950 border border-slate-800 px-2 py-1 rounded text-xs text-white focus:outline-none"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}

@@ -144,7 +144,7 @@ function initDb() {
         const content = JSON.parse(contentStr);
 
         console.log('Seeding site settings...');
-        const keys = ['global', 'home', 'about', 'support', 'dealership', 'contact', 'buttons', 'forms', 'theme', 'footer'];
+        const keys = ['global', 'home', 'about', 'support', 'dealership', 'contact', 'buttons', 'forms', 'theme', 'footer', 'productsPage', 'inquiry', 'terms'];
         keys.forEach(key => {
           if (content[key]) {
             db.prepare('INSERT OR REPLACE INTO site_settings (key, value) VALUES (?, ?)').run(
