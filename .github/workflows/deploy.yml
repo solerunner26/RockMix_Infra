@@ -15,6 +15,15 @@ jobs:
           fetch-depth: 0
           lfs: true
 
+      - name: Check Secret Presence
+        run: |
+          if [ -z "${{ secrets.HF_TOKEN }}" ]; then
+            echo "::error::GitHub Secret 'HF_TOKEN' is missing or empty! Please add it in your repository Settings > Secrets and variables > Actions > Repository secrets."
+            exit 1
+          else
+            echo "GitHub Secret 'HF_TOKEN' is successfully detected."
+          fi
+
       - name: Push to Hugging Face Space
         run: |
-          git push --force https://ZeusAI79:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/ZeusAI79/RockMix_Infra main
+          git push --force https://token:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/ZeusAI79/RockMix_Infra main
