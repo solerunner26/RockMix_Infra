@@ -16,8 +16,10 @@ jobs:
           lfs: true
 
       - name: Check Secret Presence
+        env:
+          HF_SYNC: ${{ secrets.HF_SYNC }}
         run: |
-          if [ -z "${{ secrets.HF_SYNC }}" ]; then
+          if [ -z "$HF_SYNC" ]; then
             echo "::error::GitHub Secret 'HF_SYNC' is missing or empty! Please add it in your repository Settings > Secrets and variables > Actions > Repository secrets."
             exit 1
           else
@@ -25,5 +27,7 @@ jobs:
           fi
 
       - name: Push to Hugging Face Space
+        env:
+          HF_SYNC: ${{ secrets.HF_SYNC }}
         run: |
-          git push --force https://token:${{ secrets.HF_SYNC }}@huggingface.co/spaces/ZeusAI79/RockMix main
+          git push --force https://token:$HF_SYNC@huggingface.co/spaces/ZeusAI79/RockMix main
