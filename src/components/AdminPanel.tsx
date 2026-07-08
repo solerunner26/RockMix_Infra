@@ -4,7 +4,7 @@ import {
   Settings, Shield, LogOut, ChevronRight, Save, RotateCcw, Download, 
   Upload, Trash2, Plus, Edit, X, Check, AlertTriangle, ArrowLeft, ArrowUp, ArrowDown,
   BarChart3, FileSpreadsheet, Copy, ExternalLink, TrendingUp, Sparkles, CheckCircle, HelpCircle,
-  Mail, Phone, MapPin, MessageSquare, Clipboard, Calendar, Search, Filter, BookOpen, Layers
+  Mail, Phone, MapPin, MessageSquare, Clipboard, Calendar, Search, Filter, BookOpen, Layers, Building2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useSiteContent } from '../context/SiteContentContext';
@@ -2404,7 +2404,7 @@ export default function AdminPanel() {
                             <div className="space-y-0.5 text-slate-400">
                               <p className="flex items-center gap-1.5"><Mail className="h-3 w-3" /> {lead.email}</p>
                               <p className="flex items-center gap-1.5"><Phone className="h-3 w-3" /> {lead.phone}</p>
-                              <p className="flex items-center gap-1.5"><Building className="h-3 w-3" /> {lead.company}</p>
+                              <p className="flex items-center gap-1.5"><Building2 className="h-3 w-3" /> {lead.company}</p>
                               <p className="flex items-center gap-1.5"><MapPin className="h-3 w-3" /> {lead.city} {lead.country ? `, ${lead.country}` : ''}</p>
                             </div>
                           </td>
